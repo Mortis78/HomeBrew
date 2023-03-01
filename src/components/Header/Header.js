@@ -5,3 +5,5 @@ function Header(){
         <img className="beer-taps-img" src="public/beerTaps.png" alt="Beer Taps"/>
     )
 }
+
+export default Header
