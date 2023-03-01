@@ -15,7 +15,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    getApiData(beers)
+    getApiData('beers')
     .then( data => {
       const cleanBeersData = data.map(beer => cleanBeerData(beer))
       this.setState({beers: cleanBeersData})
