@@ -1,15 +1,12 @@
 import React from 'react';
-import './SingleBeer.css';
+import './Card.css';
 
 
-const singlBeer = (props) => {
+const Card = (props) => {
   return (
         <div className='beer-cards'>
-
             <span>
                 <link>{link}</link>
-            </span>
-            <span>
                 <h3>{name}</h3>
                 <p>{tagline}</p>
                 <p>{rating}</p>
@@ -19,5 +16,5 @@ const singlBeer = (props) => {
     )
 }
 
-export default singleBeer;
+export default Card;
 

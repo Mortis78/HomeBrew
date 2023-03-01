@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-
-import './AllBeers.css'
+import Card from '../Card/Card'
+import './Beers.css'
 
 
 const Beers = (props) => {
