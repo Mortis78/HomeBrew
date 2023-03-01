@@ -20,6 +20,7 @@ const Beers = (props) => {
 
   return (
     <div className='beer-cards'>
+      < Header />
       {beerCards}
     </div>
   )
