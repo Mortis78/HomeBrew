@@ -8,7 +8,7 @@ const ErrorPage = () => {
         <div className="errorPage">
             {/* <div className="oops"></div> */}
             <h1>404 Error</h1>
-            <h2>Sorry, this isnt a place that will be fullfilling in any way!</h2>
+            <h2>Sorry, this isn't a place that will be fulfilling in any way!</h2>
             <p>This link will take you back home:</p>
             <Link to='/beers'>Home</Link>
         </div>
