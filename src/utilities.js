@@ -1,4 +1,4 @@
-const cleanBeerData =  beers => {
+const cleanBeerData =  beer => {
     return  {
       id: beer.id,
       name: beer.name,
