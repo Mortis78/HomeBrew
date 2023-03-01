@@ -1,14 +1,37 @@
-import React from 'react';
-import Header from './components/Header/Header'
+import React, { Component } from 'react';
+import getApiData from './apiCalls';
+import { Route, Switch } from 'react-router-dom'
+import Beers from './components/Beers/Beers'
+import ErrorPage from './components/ErrorPage';
+import cleanBeerData from './utilities';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      < Header />
-      <h1>Home Brew</h1>
-    </div>
-  );
+class App extends Component {
+  constructor(){
+    super()
+    this.sate = {
+      beers: []
+    }
+  }
+
+  componentDidMount(){
+    getApiData(beers)
+    .then( data => {
+      const cleanBeersData = data.map(beer => cleanBeerData(beer))
+      this.setState({beers: cleanBeersData})
+    })
+  }
+
+  render(){
+    return (
+      <main className="App">
+        <Switch>
+          <Route> exact path='/beers' render={() => <Beers beers={this.state.beers}/>}</Route>
+          <Route path="*"><ErrorPage /></Route>
+        </Switch>
+      </main>
+    )
+  }
 }
 
-export default App;
+export default App

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-
-import './AllBeers.css'
+import Card from '../Card/Card'
+import Header from '../Header/Header';
+import './Beers.css'
 
 
 const Beers = (props) => {
@@ -11,15 +12,16 @@ const Beers = (props) => {
         id={beer.id}
         key={beer.id}
         name={beer.name}
-        description={beer.description}
         tagline={beer.tagline}
-        image={beer.image}
+        description={beer.description}
+        beerImage={beer.image}
       />
     )
   })
 
   return (
     <div className='beer-cards'>
+      < Header />
       {beerCards}
     </div>
   )
