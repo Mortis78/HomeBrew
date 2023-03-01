@@ -2,15 +2,14 @@ import React from 'react';
 import './Card.css';
 
 
-const Card = (props) => {
+const Card = ({ id, name, tagline, description, beerImage }) => {
   return (
         <div className='beer-cards'>
+            <img className="beer-image" src={beerImage} alt={img} />
             <span>
-                <link>{link}</link>
                 <h3>{name}</h3>
                 <p>{tagline}</p>
-                <p>{rating}</p>
-                <p>{abv}</p>
+                <p>{description}</p>
             </span>
         </div>
     )

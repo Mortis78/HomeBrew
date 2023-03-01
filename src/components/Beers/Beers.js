@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Card from '../Card/Card'
+import Header from '../Header/Header';
 import './Beers.css'
 
 
@@ -11,9 +12,9 @@ const Beers = (props) => {
         id={beer.id}
         key={beer.id}
         name={beer.name}
-        description={beer.description}
         tagline={beer.tagline}
-        image={beer.image}
+        description={beer.description}
+        beerImage={beer.image}
       />
     )
   })

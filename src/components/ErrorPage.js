@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from 'react-router-dom'
-import './NotFound.css'
 
 
-const NotFound = () => {
+
+const ErrorPage = () => {
     return (
         <div className="errorPage">
             {/* <div className="oops"></div> */}
@@ -14,4 +14,4 @@ const NotFound = () => {
         </div>
     )
 }
-export default NotFound
+export default ErrorPage
