@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import getApiData from './apiCalls';
 import { Route, Switch } from 'react-router-dom'
+import PropTypes from 'prop-types'; 
+import getApiData from './apiCalls';
 import Beers from './components/Beers/Beers'
 import ErrorPage from './components/ErrorPage';
 import cleanBeerData from './utilities';
@@ -26,8 +27,8 @@ class App extends Component {
     return (
       <main className="App">
         <Switch>
-          <Route> exact path='/beers' render={() => <Beers beers={this.state.beers}/>}</Route>
-          <Route path="*"><ErrorPage /></Route>
+          <Route exact path='/beers' render={() => <Beers beers={this.state.beers}/>}></Route>
+          <Route path="*"><ErrorPage/></Route>
         </Switch>
       </main>
     )
