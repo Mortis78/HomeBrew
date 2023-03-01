@@ -11,3 +11,5 @@ function getApiData(data) {
   }
   
   export default getApiData 
+
+  
