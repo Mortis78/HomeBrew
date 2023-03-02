@@ -1,10 +1,11 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './Card.css';
 
 
 const Card = ({ id, name, tagline, description, beerImage }) => {
   return (
-        <div className='beer-cards'>
+        <NavLink to={`/${props.id}`}>
             <span className='beer-image-span'>
                 <img className="beer-image" src={beerImage} alt={'img'} />
             </span>
@@ -13,7 +14,7 @@ const Card = ({ id, name, tagline, description, beerImage }) => {
                 <p>{tagline}</p>
                 <p>{description}</p>
             </span>
-        </div>
+        </NavLink>
     )
 }
 

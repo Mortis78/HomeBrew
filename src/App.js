@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import PropTypes from 'prop-types'; 
 import getApiData from './apiCalls';
 import Beers from './components/Beers/Beers'
+import SingleBeer from './components/SingleBeer/SingleBeer'
 import Header from './components/Header/Header'
 import ErrorPage from './components/ErrorPage';
 import cleanBeerData from './utilities';
@@ -11,8 +12,9 @@ import './App.css';
 class App extends Component {
   constructor(){
     super()
-    this.sate = {
-      beers: []
+    this.state = {
+      beers: [],
+      singleBeer:[]
     }
   }
 
@@ -24,6 +26,18 @@ class App extends Component {
     })
   }
 
+  SingleBeer= (id) => {
+    const findBeer = this.state.beers.find(beer => beer.id === id)
+    getAPIData(`beers/${findBeer.id}`)
+    .then((data) => {
+      this.setState({
+          singleBeer: data.beer,
+          isClicked: true
+      })
+      console.log("Fetch Single Beer:", data)
+    })
+  }
+
 
   render(){
     return (
@@ -31,6 +45,8 @@ class App extends Component {
         <div>< Header /></div>
         <Switch>
           <Route path='/beers' render={() => <Beers beers={this.state.beers}/>}></Route>
+          <Route exact path='/beers/:id' render={({match})=> <SingleBeer beerId={match.params.id} />} 
+            ></Route>
           <Route path="*"><ErrorPage/></Route>
         </Switch>
       </main>
