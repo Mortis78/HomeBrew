@@ -1,6 +1,8 @@
 .beer-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 30%));
-    
     grid-gap: 2%;
+    padding-left: 8%;
   }
+
+  
