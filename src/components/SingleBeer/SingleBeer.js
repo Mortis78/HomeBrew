@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import getApiData from '../apiCalls.js'
 import './SingleBeer.css'
 
 
@@ -31,3 +30,5 @@ class SingleBeer extends Component{
         )
     }
 }
+
+export default SingleBeer

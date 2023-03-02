@@ -10,8 +10,8 @@ import cleanBeerData from './utilities';
 import './App.css';
 
 class App extends Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state = {
       beers: [],
       singleBeer:[]
@@ -28,7 +28,7 @@ class App extends Component {
 
   SingleBeer= (id) => {
     const findBeer = this.state.beers.find(beer => beer.id === id)
-    getAPIData(`beers/${findBeer.id}`)
+    getApiData(`beers/${findBeer.id}`)
     .then((data) => {
       this.setState({
           singleBeer: data.beer,
