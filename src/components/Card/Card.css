@@ -1,7 +1,10 @@
 .beer-image{
     max-height: 20rem;
-    padding-left: 30%;
+   
 }
 .beer-cards{
-    padding-bottom: 20%;
+    padding-bottom: 15%;
 }
+/* .beer-info{
+    padding-left: 5%;
+} */

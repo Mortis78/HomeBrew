@@ -1,5 +1,6 @@
 .beer-cards {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 30%));
+    
+    grid-gap: 2%;
   }
