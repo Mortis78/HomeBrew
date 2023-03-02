@@ -1,7 +1,14 @@
 .beer-image{
-    max-height: 20rem;
-    padding-left: 30%;
+    max-height: 40vh;
+    max-width: 30vw;
+    color: rgb(185, 20, 20);
+   
 }
 .beer-cards{
-    padding-bottom: 20%;
+    padding-bottom: 15%;
+}
+
+.beer-info{
+    padding-top: 5%;
+    color:rgb(18, 20, 22)
 }
