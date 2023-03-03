@@ -1,19 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Card.css';
 
-
-const Card = ({ id, name, tagline, description, beerImage }) => {
+const Card = (props) => {
   return (
-        <div className='beer-cards'>
+    <div>
+
+        <Link to={`/beers/${props.id}`}>
             <span className='beer-image-span'>
-                <img className="beer-image" src={beerImage} alt={'img'} />
+                <img className="beer-image" src={props.beerImage} alt={'img'} />
+                <h3>{props.name}</h3>
             </span>
-            <span className='beer-info'>
-                <h3>{name}</h3>
-                <p>{tagline}</p>
-                <p>{description}</p>
-            </span>
-        </div>
+        </Link>
+        <span className='beer-info'>
+            <p>{props.tagline}</p>
+            <p>{props.description}</p>
+        </span>
+    </div>
     )
 }
 

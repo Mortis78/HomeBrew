@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import Card from '../Card/Card'
 import './Beers.css'
 
@@ -10,10 +9,12 @@ const Beers = (props) => {
       <Card
         id={beer.id}
         key={beer.id}
+        abv={beer.abv}
         name={beer.name}
         tagline={beer.tagline}
-        description={beer.description}
         beerImage={beer.beerImage}
+        description={beer.description}
+        foodPairing={beer.foodPairing}
       />
     )
   })

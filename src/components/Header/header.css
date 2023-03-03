@@ -1,10 +1,23 @@
-.beer-taps-img{
-    max-width: 100%;
-    max-height: 20%;
-}
-.header-container{
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 15vh;
     width: 100vw;
-}
-.Header{
-    font-size: 50%;
+   
+    padding-bottom: 20px;
+    margin: 0;
+    padding: 0;
+    }
+      
+
+.beer-taps-img{
+    width: 100vw;
+    height: 350px;
+    background-image: url('../../beerTaps.png');
+    background-size: contain;
+    opacity: 80%;
+    background-repeat: no-repeat;
 }
