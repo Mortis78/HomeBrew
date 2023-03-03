@@ -1,21 +1,20 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Card.css';
 
-
-const Card = ({ id, name, tagline, description, beerImage }) => {
+const Card = (props) => {
   return (
     <div>
 
-        <NavLink to={`/${id}`}>
+        <Link to={`/beers/${props.id}`}>
             <span className='beer-image-span'>
-                <img className="beer-image" src={beerImage} alt={'img'} />
-                <h3>{name}</h3>
+                <img className="beer-image" src={props.beerImage} alt={'img'} />
+                <h3>{props.name}</h3>
             </span>
-        </NavLink>
+        </Link>
         <span className='beer-info'>
-            <p>{tagline}</p>
-            <p>{description}</p>
+            <p>{props.tagline}</p>
+            <p>{props.description}</p>
         </span>
     </div>
     )

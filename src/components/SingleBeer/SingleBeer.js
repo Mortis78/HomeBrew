@@ -1,20 +1,36 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
+import getApiData from "../../apiCalls";
+import cleanBeerData from '../../utilities';
 import './SingleBeer.css'
 
 
 
 class SingleBeer extends Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
-            beer: {}
+            singleBeer: {}
         }
     }
 
+
+    componentDidMount(){
+        console.log(this.state.singleBeer)
+        getApiData(`beers/${this.props.beer}`)
+        .then(data => {
+            console.log(data)
+          const cleanData = data.map(beer => cleanBeerData(beer))
+          this.setState({singleBeer: cleanData })
+        })
+    }
+
+
     render(){
-        const{ name, tagline, description, image_url, abv, foodPairing, } = this.state.beer
+        console.log(this.state)
+        const{ name, tagline, description, image_url, abv, foodPairing, } = this.state.singleBeer
         return(
-            <section>
+            <section className='single-beer-section'>
                 <img className="single-beer-img" src={image_url} alt="beer" />
                 <span>
                     <h2>{name}</h2>
@@ -26,9 +42,12 @@ class SingleBeer extends Component{
                     <p>{foodPairing}</p>
 
                 </span>
+                <Link to={'/beers'} className="homeButton">
+                    <p>Back to Home</p>
+                </Link>
             </section>
         )
     }
 }
 
-export default SingleBeer
+export default SingleBeer;
