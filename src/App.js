@@ -26,11 +26,11 @@ class App extends Component {
     })
   }
 
-  componentDidUpdate(prevProps, prevState){
-    if(this.state.singleBeer !== prevState.singleBeer){
-      this.setState({data: this.props.data})
-    }
-  }
+  // componentDidUpdate(prevProps, prevState){
+  //   if(this.state.singleBeer !== prevState.singleBeer){
+  //     this.setState({data: this.props.data})
+  //   }
+  // }
 
   // handleChange(){
   //   this.setState({singleBeer: })
