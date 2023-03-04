@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import getApiData from "../../apiCalls";
 import cleanBeerData from '../../utilities';
 import './SingleBeer.css'
@@ -16,18 +16,15 @@ class SingleBeer extends Component{
 
 
     componentDidMount(){
-        console.log(this.state.singleBeer)
-        getApiData(`beers/${this.props.beer}`)
+        getApiData(`beers/${this.props.beerid}`)
         .then(data => {
-            console.log(data)
-          const cleanData = data.map(beer => cleanBeerData(beer))
-          this.setState({singleBeer: cleanData })
+            console.log('data = ',data)
+          this.setState({singleBeer: data})
         })
     }
 
 
     render(){
-        console.log(this.state)
         const{ name, tagline, description, image_url, abv, foodPairing, } = this.state.singleBeer
         return(
             <section className='single-beer-section'>
@@ -42,9 +39,9 @@ class SingleBeer extends Component{
                     <p>{foodPairing}</p>
 
                 </span>
-                <Link to={'/beers'} className="homeButton">
+                <NavLink to={'/beers'} className="homeButton">
                     <p>Back to Home</p>
-                </Link>
+                </NavLink>
             </section>
         )
     }

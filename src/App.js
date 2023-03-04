@@ -4,7 +4,7 @@ import Header from './components/Header/Header'
 import Beers from './components/Beers/Beers'
 import SingleBeer from './components/SingleBeer/SingleBeer'
 import getApiData from './apiCalls';
-import PropTypes from 'prop-types'; 
+// import PropTypes from 'prop-types'; 
 import ErrorPage from './components/ErrorPage';
 import cleanBeerData from './utilities';
 import './App.css';
@@ -26,25 +26,29 @@ class App extends Component {
     })
   }
 
-  // componentDidUpdate(prevProps, prevState){
-  //   if(this.state.singleBeer !== prevState.singleBeer){
-  //     this.setState({data: this.props.data})
-  //   }
-  // }
-
-  // handleChange(){
-  //   this.setState({singleBeer: })
-  // }
+  showSingleBeer = (id) => {
+    const findBeer = this.state.beers.find(beer => beer.id === id)
+    getApiData(`beers/${findBeer.id}`)
+    .then((data) => {
+      this.setState({
+        singleBeer: data,
+        isClicked: true
+      })
+      console.log("Fetch Single beer:", data)
+    })
+  }
 
   render(){
     return (
       <main className="App">
         <div>< Header /></div>
-        
-          <Route path='/beers' render={() => <Beers beers={this.state.beers}/>}></Route>
-          <Route path='/beers/:id' render={({ match }) => <SingleBeer beer={match.params.id} /> }/>
+        <Switch>
+
+          <Route exact path='/beers' render={() => <Beers beers={this.state.beers}/>}></Route>
+          <Route path='/:id' render={({ match }) => <SingleBeer beerid={match.params.id} /> }/>
           <Route path="*"><ErrorPage /></Route>
         
+        </Switch>
       </main>
     )
   }

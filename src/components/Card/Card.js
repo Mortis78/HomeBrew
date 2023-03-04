@@ -6,7 +6,7 @@ const Card = (props) => {
   return (
     <div>
 
-        <Link to={`/beers/${props.id}`}>
+        <Link to={`/${props.id}`}>
             <span className='beer-image-span'>
                 <img className="beer-image" src={props.beerImage} alt={'img'} />
                 <h3>{props.name}</h3>
