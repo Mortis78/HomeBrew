@@ -13,14 +13,15 @@ class SingleBeer extends Component{
             singleBeer: {}
         }
     }
-
-
+    
+    
     componentDidMount(){
         getApiData(`beers/${this.props.beerid}`)
         .then(data => {
             console.log('data = ',data)
-          this.setState({singleBeer: data})
+            this.setState({singleBeer: data[0]})
         })
+        console.log('singleBeer = ',this.state.singleBeer)
     }
 
 

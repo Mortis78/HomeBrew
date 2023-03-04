@@ -14,7 +14,7 @@ class App extends Component {
     super(props)
     this.state = {
       beers: [],
-      singleBeer:null
+      singleBeer:{}
     }
   }
 
@@ -45,7 +45,7 @@ class App extends Component {
         <Switch>
 
           <Route exact path='/beers' render={() => <Beers beers={this.state.beers}/>}></Route>
-          <Route path='/:id' render={({ match }) => <SingleBeer beerid={match.params.id} /> }/>
+          <Route exact path='/:id' render={({ match }) => <SingleBeer beerid={match.params.id} /> }/>
           <Route path="*"><ErrorPage /></Route>
         
         </Switch>
