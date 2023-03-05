@@ -1,3 +1,4 @@
+import React from 'react'
 import Card from '../Card/Card'
 import './Beers.css'
 
@@ -14,7 +15,7 @@ const Beers = (props) => {
         tagline={beer.tagline}
         beerImage={beer.beerImage}
         description={beer.description}
-        foodPairing={beer.foodPairing}
+        foodPairing={beer.food_pairing}
       />
     )
   })
