@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { NavLink } from "react-router-dom";
 import getApiData from "../../apiCalls";
 // import cleanBeerData from '../../utilities';
-import App from '../../App';
 import './SingleBeer.css'
 
 
@@ -16,17 +15,17 @@ class SingleBeer extends Component{
     }
 
     
-    componentDidMount(){
+    componentDidMount = () => {
         getApiData(`beers/${this.props.beerid}`)
         .then(data => {
             console.log('data = ',data)
             this.setState({singleBeer: data[0]})
         })
-        console.log('singleBeer = ',this.state.singleBeer)
     }
     
     handleClick = () => {
-        const newState = this.state.singleBeer 
+        const newState = this.state.singleBeer
+        console.log('singleBeer = ',this.state.singleBeer)
         this.props.updateFavoritesState(newState)
     }
 
