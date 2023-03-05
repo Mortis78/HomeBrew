@@ -42,7 +42,8 @@ class SingleBeer extends Component{
                 <NavLink to={'/beers'} className="homeButton">
                     <p>Back to Home</p>
                 </NavLink>
-                <button onClick={this.props.onButtonClick(this.state.singleBeer)}>Add to Favorites</button>
+                <button onClick={this.props.onButtonClick(this.state.singleBeer)}>Add to Favorites</button> ///i think i need to send this.state.singleBeer
+                /// to handleAddToFavorites diferntly 
             </section>
         )
     }
