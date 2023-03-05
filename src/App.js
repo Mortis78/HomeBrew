@@ -14,9 +14,15 @@ class App extends Component {
     super(props)
     this.state = {
       beers: [],
-      singleBeer:{}
+      favorites: []
     }
+    console.log('favorites', this.state.favorites)
   }
+
+
+  handleAddToFavorites(beer) {
+    this.setState({favorites: [...this.state.favorites, beer]})
+}
 
   componentDidMount(){
     getApiData('beers')
@@ -26,28 +32,14 @@ class App extends Component {
     })
   }
 
-  showSingleBeer = (id) => {
-    const findBeer = this.state.beers.find(beer => beer.id === id)
-    getApiData(`beers/${findBeer.id}`)
-    .then((data) => {
-      this.setState({
-        singleBeer: data,
-        isClicked: true
-      })
-      console.log("Fetch Single beer:", data)
-    })
-  }
-
   render(){
     return (
       <main className="App">
         <div>< Header /></div>
         <Switch>
-
           <Route exact path='/beers' render={() => <Beers beers={this.state.beers}/>}></Route>
-          <Route exact path='/:id' render={({ match }) => <SingleBeer beerid={match.params.id} /> }/>
+          <Route exact path='/:id' render={({ match }) => <SingleBeer beerid={match.params.id} onButtonClick={this.handleAddToFavorites} /> }/>
           <Route path="*"><ErrorPage /></Route>
-        
         </Switch>
       </main>
     )
