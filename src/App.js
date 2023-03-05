@@ -14,15 +14,17 @@ class App extends Component {
     super(props)
     this.state = {
       beers: [],
-      // favorites: []
+      favorites: []
     }
-    // console.log('favorites', this.state.favorites)
+    this.updateFavoritesState = this.updateFavoritesState.bind(this);
+    console.log('favorites', this.state.favorites)
   }
 
-
-  // handleAddToFavorites(beer) {
-  //   this.setState({favorites: [...this.state.favorites, beer]})
-  // }
+  updateFavoritesState(newState) {
+    this.setState({ favorites: [{...this.state.favorites, ...newState} ]});
+  }
+ 
+  
 
   componentDidMount(){
     getApiData('beers')

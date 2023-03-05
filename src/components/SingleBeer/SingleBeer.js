@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink } from "react-router-dom";
 import getApiData from "../../apiCalls";
-import cleanBeerData from '../../utilities';
+// import cleanBeerData from '../../utilities';
 import App from '../../App';
 import './SingleBeer.css'
 
@@ -15,6 +15,7 @@ class SingleBeer extends Component{
         }
     }
 
+    
     componentDidMount(){
         getApiData(`beers/${this.props.beerid}`)
         .then(data => {
@@ -23,7 +24,11 @@ class SingleBeer extends Component{
         })
         console.log('singleBeer = ',this.state.singleBeer)
     }
-
+    
+    handleClick = () => {
+        const newState = this.state.singleBeer 
+        this.props.updateFavoritesState(newState)
+    }
 
     render(){
         const{ name, tagline, description, image_url, abv, foodPairing, } = this.state.singleBeer
@@ -43,12 +48,10 @@ class SingleBeer extends Component{
                     <p>Back to Home</p>
                 </NavLink>
 
-                <button onClick={this.props.onButtonClick(this.state.singleBeer)}>Add to Favorites</button> ///i think i need to send this.state.singleBeer
-                /// to handleAddToFavorites diferntly 
-                {/* <button onClick={this.props.onButtonClick(this.state.singleBeer)}>Add to Favorites</button> */}
+                <button onClick={this.handleClick}>Add to Favorites</button> 
             </section>
         )
     }
 }
 
-export default SingleBeer;
+export default SingleBeer
