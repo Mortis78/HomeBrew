@@ -14,15 +14,15 @@ class App extends Component {
     super(props)
     this.state = {
       beers: [],
-      favorites: []
+      // favorites: []
     }
-    console.log('favorites', this.state.favorites)
+    // console.log('favorites', this.state.favorites)
   }
 
 
-  handleAddToFavorites(beer) {
-    this.setState({favorites: [...this.state.favorites, beer]})
-}
+  // handleAddToFavorites(beer) {
+  //   this.setState({favorites: [...this.state.favorites, beer]})
+  // }
 
   componentDidMount(){
     getApiData('beers')
@@ -38,7 +38,7 @@ class App extends Component {
         <div>< Header /></div>
         <Switch>
           <Route exact path='/beers' render={() => <Beers beers={this.state.beers}/>}></Route>
-          <Route exact path='/:id' render={({ match }) => <SingleBeer beerid={match.params.id} onButtonClick={this.handleAddToFavorites} /> }/>
+          <Route exact path='/:id' render={({ match }) => <SingleBeer beerid={match.params.id} /> }/>
           <Route path="*"><ErrorPage /></Route>
         </Switch>
       </main>
