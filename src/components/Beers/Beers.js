@@ -15,7 +15,7 @@ const Beers = (props) => {
         tagline={beer.tagline}
         beerImage={beer.beerImage}
         description={beer.description}
-        foodPairing={beer.foodPairing}
+        foodPairing={beer.food_pairing}
       />
     )
   })
