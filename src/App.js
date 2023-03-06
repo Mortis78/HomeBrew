@@ -11,21 +11,19 @@ import './App.css';
 
 class App extends Component {
   constructor(props){
+    console.log(props)
     super(props)
     this.state = {
       beers: [],
       favorites: []
     }
-    // this.updateFavoritesState = this.updateFavoritesState.bind(this);
-    console.log('favorites = ', this.state.favorites)
   }
-
+  // left console.logs to show that favorites update. click (add to favorites) twice to see data display
   updateFavoritesState = (newState) => {
-    this.setState({ favorites: [...this.state.favorites, newState]});
+    this.setState({ favorites: [...this.state.favorites, newState]})
+      console.log('favorites array = ', this.state.favorites)
   }
- 
   
-
   componentDidMount = () =>{
     getApiData('beers')
     .then( data => {
@@ -47,6 +45,5 @@ class App extends Component {
     )
   }
 }
-
 
 export default App  

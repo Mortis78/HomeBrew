@@ -14,7 +14,6 @@ const Card = (props) => {
         </Link>
         <span className='beer-info'>
             <p>{props.tagline}</p>
-            <p>{props.description}</p>
         </span>
     </contaner>
     )

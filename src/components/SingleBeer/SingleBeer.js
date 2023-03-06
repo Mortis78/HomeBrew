@@ -15,7 +15,6 @@ class SingleBeer extends Component{
     componentDidMount = () => {
         getApiData(`beers/${this.props.beerid}`)
         .then(data => {
-            console.log('data = ',data)
             this.setState({singleBeer: data[0]})
         })
     }
@@ -37,7 +36,7 @@ class SingleBeer extends Component{
                     <p className='description'>{description}</p>
                 </div>
                 <div>
-                    <p>{abv}</p>
+                    <p> ABV {abv}</p>
                     <p>{foodPairing}</p>
                 </div>
                 <NavLink to={'/beers'} className="homeButton">
