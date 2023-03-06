@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from '../Card/Card'
+import PropTypes from 'prop-types'
 import './Beers.css'
 
 
@@ -28,3 +29,14 @@ const Beers = (props) => {
 }
 
 export default Beers
+
+Beers.propTypes = {
+  id:PropTypes.number,
+  key:PropTypes.number,
+  abv:PropTypes.number,
+  name:PropTypes.string,
+  tagline:PropTypes.string,
+  beerImage:PropTypes.string,
+  description:PropTypes.string,
+  foodPairing:PropTypes.string,
+}

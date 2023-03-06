@@ -1,5 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import './Card.css';
 
 const Card = (props) => {
@@ -21,3 +22,8 @@ const Card = (props) => {
 
 export default Card;
 
+Card.propTypes = {
+    id: PropTypes.number,
+    name:PropTypes.string,
+    beerImage: PropTypes.string,
+  }

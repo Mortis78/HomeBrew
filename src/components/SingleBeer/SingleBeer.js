@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink } from "react-router-dom";
 import getApiData from "../../apiCalls";
-import cleanBeerData from '../../utilities';
+import PropTypes from 'prop-types'
 import './SingleBeer.css'
 
 class SingleBeer extends Component{
@@ -49,3 +49,14 @@ class SingleBeer extends Component{
 }
 
 export default SingleBeer
+
+SingleBeer.propTypes = {
+    id:PropTypes.number,
+    key:PropTypes.number,
+    abv:PropTypes.number,
+    name:PropTypes.string,
+    tagline:PropTypes.string,
+    beerImage:PropTypes.string,
+    description:PropTypes.string,
+    foodPairing:PropTypes.string,
+  }

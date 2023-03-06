@@ -4,21 +4,20 @@ import Header from './components/Header/Header'
 import Beers from './components/Beers/Beers'
 import SingleBeer from './components/SingleBeer/SingleBeer'
 import getApiData from './apiCalls';
-// import PropTypes from 'prop-types'; 
 import ErrorPage from './components/ErrorPage';
 import cleanBeerData from './utilities';
 import './App.css';
 
 class App extends Component {
   constructor(props){
-    console.log(props)
     super(props)
     this.state = {
       beers: [],
       favorites: []
     }
   }
-  // left console.logs to show that favorites update. click (add to favorites) twice to see data display
+
+  // left console.log to show that favorites update. click (add to favorites) twice to see data display in favorits array 
   updateFavoritesState = (newState) => {
     this.setState({ favorites: [...this.state.favorites, newState]})
       console.log('favorites array = ', this.state.favorites)
