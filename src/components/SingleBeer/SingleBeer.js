@@ -38,7 +38,7 @@ class SingleBeer extends Component{
                 </div>
                 <div>
                     <p> ABV {abv}</p>
-                    <p className='food-pairing'>{foodPairing}</p>
+                    <p className='food-pairing'>Some Pairing Recomendations: {foodPairing}</p>
                 </div>
                 <NavLink className="home-link" to={'/beers'}>
                     <p>Back to Home</p>
