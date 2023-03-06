@@ -21,7 +21,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 1. Clone down [this repository](https://github.com/Mortis78/HomeBrew)
 2. Run `npm install`
 3. Run `npm start` in your terminal
-4. Go to http://localhost:3000/ and you should see the website
+4. Go to http://localhost:3000/beers and you should see the website
 5. Enter `control + c` in your terminal to stop the server at any time.
 
 ## Technologies

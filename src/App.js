@@ -36,8 +36,8 @@ class App extends Component {
       <main className="App">
         <div>< Header /></div>
         <Switch>
-          <Route exact path='/beers' render={() => <Beers beers={this.state.beers}/>}></Route>
-          <Route exact path='/:id' render={({ match }) => <SingleBeer beerid={match.params.id} updateFavoritesState={this.updateFavoritesState} /> }/>
+          <Route path='/beers' render={() => <Beers beers={this.state.beers}/>}></Route>
+          <Route path='/:id' render={({ match }) => <SingleBeer beerid={match.params.id} updateFavoritesState={this.updateFavoritesState} /> }/>
           <Route path="*"><ErrorPage /></Route>
         </Switch>
       </main>
