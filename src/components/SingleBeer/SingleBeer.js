@@ -4,8 +4,6 @@ import getApiData from "../../apiCalls";
 // import cleanBeerData from '../../utilities';
 import './SingleBeer.css'
 
-
-
 class SingleBeer extends Component{
     constructor(props){
         super(props)
@@ -14,7 +12,6 @@ class SingleBeer extends Component{
         }
     }
 
-    
     componentDidMount = () => {
         getApiData(`beers/${this.props.beerid}`)
         .then(data => {
@@ -46,8 +43,7 @@ class SingleBeer extends Component{
                 <NavLink to={'/beers'} className="homeButton">
                     <p>Back to Home</p>
                 </NavLink>
-
-                <button onClick={this.handleClick}>Add to Favorites</button> 
+                <button className='add-favorite' onClick={this.handleClick}>Add to Favorites</button> 
             </section>
         )
     }

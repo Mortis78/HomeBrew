@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   updateFavoritesState = (newState) => {
-    this.setState({ favorites: [{...this.state.favorites, ...newState} ]});
+    this.setState({ favorites: [...this.state.favorites, newState]});
   }
  
   
