@@ -31,7 +31,6 @@ class SingleBeer extends Component{
         const{ name, tagline, description, image_url, abv, foodPairing, } = this.state.singleBeer
         return(
             <section className='single-beer-section'>
-                <img className="single-beer-img" src={image_url} alt="beer" />
                 <div>
                     <h2>{name}</h2>
                     <p>{tagline}</p>
@@ -39,7 +38,7 @@ class SingleBeer extends Component{
                 </div>
                 <div>
                     <p> ABV {abv}</p>
-                    <p>{foodPairing}</p>
+                    <p className='food-pairing'>{foodPairing}</p>
                 </div>
                 <NavLink to={'/beers'} className="homeButton">
                     <p>Back to Home</p>
@@ -58,7 +57,6 @@ SingleBeer.propTypes = {
     abv:PropTypes.number,
     name:PropTypes.string,
     tagline:PropTypes.string,
-    beerImage:PropTypes.string,
     description:PropTypes.string,
     foodPairing:PropTypes.string,
   }
