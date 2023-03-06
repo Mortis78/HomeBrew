@@ -22,7 +22,6 @@ describe('home-page', () => {
         cy.get(".homeButton")
         .contains('Back to Home')
         .click()
-
     }
 
     it('should have a button to add a beer to favorites'), () => {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink } from "react-router-dom";
 import getApiData from "../../apiCalls";
-// import cleanBeerData from '../../utilities';
+import cleanBeerData from '../../utilities';
 import './SingleBeer.css'
 
 class SingleBeer extends Component{
