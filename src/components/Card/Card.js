@@ -20,6 +20,7 @@ const Card = (props) => {
     )
 }
 
+
 export default Card;
 
 Card.propTypes = {
