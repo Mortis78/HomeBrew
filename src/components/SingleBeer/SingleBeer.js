@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { NavLink } from "react-router-dom";
 import getApiData from "../../apiCalls";
 import PropTypes from 'prop-types'
+import cleanBeerData from '../../utilities'
 import './SingleBeer.css'
 
 class SingleBeer extends Component{
@@ -15,7 +16,8 @@ class SingleBeer extends Component{
     componentDidMount = () => {
         getApiData(`beers/${this.props.beerid}`)
         .then(data => {
-            this.setState({singleBeer: data[0]})
+            const cleanData = data.map(beer => cleanBeerData(beer))
+            this.setState({singleBeer: cleanData[0]})
         })
     }
     

@@ -4,6 +4,7 @@ import Header from './components/Header/Header'
 import Beers from './components/Beers/Beers'
 import SingleBeer from './components/SingleBeer/SingleBeer'
 import getApiData from './apiCalls';
+import PropTypes from 'prop-types'; 
 import ErrorPage from './components/ErrorPage';
 import cleanBeerData from './utilities';
 import './App.css';
