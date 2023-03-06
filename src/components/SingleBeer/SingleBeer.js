@@ -40,7 +40,7 @@ class SingleBeer extends Component{
                     <p> ABV {abv}</p>
                     <p className='food-pairing'>{foodPairing}</p>
                 </div>
-                <NavLink to={'/beers'} className="homeButton">
+                <NavLink className="home-link" to={'/beers'}>
                     <p>Back to Home</p>
                 </NavLink>
                 <button className='add-favorite' onClick={this.handleClick}>Add to Favorites</button> 
