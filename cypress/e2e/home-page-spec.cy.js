@@ -1,7 +1,7 @@
 export{}
 describe('should see all beers images, names, and taglines.', () => {
     beforeEach(() => {
-      cy.intercept('GET', 'http://localhost:3001/api/v2beers',{fixture: 'home-page.json'});
+      cy.intercept('GET', 'http://localhost:3001/api/v2/beers',{fixture: 'home-page.json'});
   
       cy.visit('http://localhost:3000/beers');
   
@@ -25,11 +25,21 @@ describe('should see all beers images, names, and taglines.', () => {
        
     } );
     
-    it('Should be able to click the beer img / beer title', () => {
-      cy.get(".beer-image")
-      .click()
-      cy.get(".beer-name")
-      .click()
-    });
+    it("Should be able to click the beer to see more details", () => {
+      cy.get(".beer-link").first().click()
+      cy.intercept("GET", "http://localhost:3000/v2/artists/1", {
+        "id": 1,
+        "name": "Buzz",
+        "tagline": "A Real Bitter Experience.",
+        "description": "A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed only once.",
+        "image_url": "https://images.punkapi.com/v2/keg.png",
+        "abv": 4.5,
+        "food_pairing": [
+        "Spicy chicken tikka masala",
+        "Grilled chicken quesadilla",
+        "Caramel toffee cake"]
+      } )
+      cy.url("http://localhost:3000/").should('include', "1")
+    })
   } 
 )
