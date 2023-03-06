@@ -1,3 +1,4 @@
+export{}
 describe('home-page', () => {
     beforeEach(() => {
       cy.intercept('GET', 'http://localhost:3001/api/v2/beers/1', {fixture: 'singleBeer-page'});

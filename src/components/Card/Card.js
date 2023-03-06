@@ -7,7 +7,7 @@ const Card = (props) => {
   return (
 
     <section>
-        <Link to={`/${props.id}`}>
+        <Link className='beer-link' to={`/${props.id}`}>
             <span className='beer-image-span'>
                 <img className="beer-image" src={props.beerImage} alt={'img'} />
                 <h3 className='beer-name'>{props.name}</h3>
