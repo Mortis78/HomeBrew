@@ -6,7 +6,7 @@ import './Card.css';
 const Card = (props) => {
   return (
 
-    <contaner>
+    <section>
         <Link to={`/${props.id}`}>
             <span className='beer-image-span'>
                 <img className="beer-image" src={props.beerImage} alt={'img'} />
@@ -16,7 +16,7 @@ const Card = (props) => {
         <span className='beer-info'>
             <p>{props.tagline}</p>
         </span>
-    </contaner>
+    </section>
     )
 }
 
