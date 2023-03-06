@@ -28,7 +28,7 @@ class SingleBeer extends Component{
     }
 
     render(){
-        const{ name, tagline, description, image_url, abv, foodPairing, } = this.state.singleBeer
+        const{ name, tagline, description, abv, foodPairing, } = this.state.singleBeer
         return(
             <section className='single-beer-section'>
                 <div>
