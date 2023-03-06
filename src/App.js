@@ -16,17 +16,17 @@ class App extends Component {
       beers: [],
       favorites: []
     }
-    this.updateFavoritesState = this.updateFavoritesState.bind(this);
-    console.log('favorites', this.state.favorites)
+    // this.updateFavoritesState = this.updateFavoritesState.bind(this);
+    console.log('favorites = ', this.state.favorites)
   }
 
-  updateFavoritesState(newState) {
-    this.setState({ favorites: [{...this.state.favorites, ...newState} ]});
+  updateFavoritesState = (newState) => {
+    this.setState({ favorites: [...this.state.favorites, newState]});
   }
  
   
 
-  componentDidMount(){
+  componentDidMount = () =>{
     getApiData('beers')
     .then( data => {
       const cleanData = data.map(beer => cleanBeerData(beer))
@@ -40,7 +40,7 @@ class App extends Component {
         <div>< Header /></div>
         <Switch>
           <Route exact path='/beers' render={() => <Beers beers={this.state.beers}/>}></Route>
-          <Route exact path='/:id' render={({ match }) => <SingleBeer beerid={match.params.id} /> }/>
+          <Route exact path='/:id' render={({ match }) => <SingleBeer beerid={match.params.id} updateFavoritesState={this.updateFavoritesState} /> }/>
           <Route path="*"><ErrorPage /></Route>
         </Switch>
       </main>
@@ -48,4 +48,5 @@ class App extends Component {
   }
 }
 
-export default App
+
+export default App  

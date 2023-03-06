@@ -2,7 +2,7 @@ describe('home-page', () => {
     beforeEach(() => {
       cy.intercept('GET', 'http://localhost:3001/api/v2/beers/1', {fixture: 'singleBeer-page'});
   
-      cy.visit('http://localhost:3000/')
+      cy.visit('http://localhost:3000/1')
   
     })
 
@@ -19,11 +19,16 @@ describe('home-page', () => {
     })
 
     it('should have a NavLink to go back home'), () => {
-        cy.contains('Back to Home')
+        cy.get(".homeButton")
+        .contains('Back to Home')
+        .click()
+
     }
 
     it('should have a button to add a beer to favorites'), () => {
-        cy.containes('Add to Favorites')
+        cy.get(".add-favorite")
+        .containes('Add to Favorites')
+        .click()
     }
 
 
