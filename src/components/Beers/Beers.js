@@ -3,7 +3,6 @@ import Card from '../Card/Card'
 import PropTypes from 'prop-types'
 import './Beers.css'
 
-
 const Beers = (props) => {
 
   const beerCards = props.beers.map(beer => {
