@@ -19,13 +19,14 @@ describe('should see a single beer with all itts onformation', () => {
         cy.contains('Spicy chicken tikka masala')
     })
 
-    it('should have a button to add a beer to favorites'), () => {
-        cy.get(".add-favorite")
-        .contains('Add to Favorites')
+    it('should have a Nav-Link to go back home'), () => {
+        cy.get('.home-link > p').click()
+        cy.url().should('eq', 'http://localhost:3000/beers')   
     }
 
-    it('should have a Nav-Link to go back home'), () => {
-        cy.get(".homelink").click()
-        cy.url("http://localhost:3000/").should('include', "beers")   
+    it('should have a button to add a beer to favorites'), () => {
+        cy.get('.add-favorite')
+        .contains('Add to Favorites')
+        .click()
     }
 })

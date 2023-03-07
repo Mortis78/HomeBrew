@@ -18,8 +18,6 @@ describe('should see all favorited beers images, names, and taglines.', () => {
         .click()
         cy.url().should('eq', 'http://localhost:3000/Favorites')
         cy.get('.beer-name').contains('Trashy Blonde')
-        
-    
       })
     
     
