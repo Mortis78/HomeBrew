@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom'
 import Header from './components/Header/Header'
+import Favorites from './components/Favorites/Favorites'
 import Beers from './components/Beers/Beers'
 import SingleBeer from './components/SingleBeer/SingleBeer'
 import getApiData from './apiCalls';
@@ -37,6 +38,7 @@ class App extends Component {
         <div>< Header /></div>
         <Switch>
           <Route path='/beers' render={() => <Beers beers={this.state.beers}/>}></Route>
+          <Route path='/Favorites' render={() => <Favorites favorites={this.state.favorites}/>}></Route>
           <Route path='/:id' render={({ match }) => <SingleBeer beerid={match.params.id} updateFavoritesState={this.updateFavoritesState} /> }/>
           <Route path="*"><ErrorPage /></Route>
         </Switch>

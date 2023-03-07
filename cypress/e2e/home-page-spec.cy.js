@@ -1,7 +1,7 @@
-export{}
+
 describe('should see all beers images, names, and taglines.', () => {
     beforeEach(() => {
-      cy.intercept('GET', 'http://localhost:3001/api/v2/beers',{fixture: 'home-page.json'});
+      cy.intercept('GET', 'https://api.punkapi.com/v2/beers',{fixture: 'home-page.json'});
   
       cy.visit('http://localhost:3000/beers');
   
@@ -27,7 +27,7 @@ describe('should see all beers images, names, and taglines.', () => {
     
     it("Should be able to click the beer to see more details", () => {
       cy.get(".beer-link").first().click()
-      cy.intercept("GET", "http://localhost:3000/v2/artists/1", {
+      cy.intercept("GET", "http://localhost:3000/v2/beers/1", {
         "id": 1,
         "name": "Buzz",
         "tagline": "A Real Bitter Experience.",
@@ -40,6 +40,12 @@ describe('should see all beers images, names, and taglines.', () => {
         "Caramel toffee cake"]
       } )
       cy.url("http://localhost:3000/").should('include', "1")
+    })
+
+    it("Should be able to go to Favorites", () => {
+      cy.get(".favorites-link").click()
+      cy.url("http://localhost:3000/").should('include', "Favorites")
+  
     })
   } 
 )

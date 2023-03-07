@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from '../Card/Card'
 import PropTypes from 'prop-types'
+import {Link} from 'react-router-dom'
 import './Beers.css'
 
 const Beers = (props) => {
@@ -22,6 +23,9 @@ const Beers = (props) => {
 
   return (
     <div className='beer-cards'>
+      <Link className='favorites-link' to={'/Favorites'}>
+        Go to Favorites
+        </Link>
       {beerCards}
     </div>
   )
