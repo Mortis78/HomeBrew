@@ -23,7 +23,7 @@ const Beers = (props) => {
 
   return (
     <div className='beer-cards'>
-      <Link className='Favorites-link' to={'/Favorites'}>
+      <Link className='favorites-link' to={'/Favorites'}>
         Go to Favorites
         </Link>
       {beerCards}

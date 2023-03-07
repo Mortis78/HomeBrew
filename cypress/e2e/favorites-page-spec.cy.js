@@ -1,8 +1,8 @@
 describe('should see all beers images, names, and taglines.', () => {
     beforeEach(() => {
-      cy.intercept('GET', 'http://localhost:3001/api/v2/beers',{fixture: 'favorites-page.json'});
+      cy.intercept('GET', 'http://localhost:3001/api/v2/Favorites',{fixture: 'favorites-page.json'});
   
-      cy.visit('http://localhost:3000/beers');
+      cy.visit('http://localhost:3000/Favorites');
   
     });
 

@@ -41,5 +41,13 @@ describe('should see all beers images, names, and taglines.', () => {
       } )
       cy.url("http://localhost:3000/").should('include', "1")
     })
+
+    it("Should be able to go to Favorites", () => {
+      cy.get(".favorites-link").click()
+      cy.url("http://localhost:3000/").should('include', "Favorites")
+      cy.contains("Trashy Blonde")
+      cy.contains("Berliner Weisse With Yuzu - B-Sides")
+  
+    })
   } 
 )
