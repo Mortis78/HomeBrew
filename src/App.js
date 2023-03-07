@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch, Link } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Header from './components/Header/Header'
 import Favorites from './components/Favorites/Favorites'
 import Beers from './components/Beers/Beers'

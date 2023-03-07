@@ -1,5 +1,5 @@
 
-describe('home-page', () => {
+describe('should see a single beer with all itts onformation', () => {
     beforeEach(() => {
       cy.intercept('GET', 'http://localhost:3001/api/v2/beers/1', {fixture: 'singleBeer-page.json'});
   

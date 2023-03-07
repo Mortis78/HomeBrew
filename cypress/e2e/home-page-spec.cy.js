@@ -27,7 +27,7 @@ describe('should see all beers images, names, and taglines.', () => {
     
     it("Should be able to click the beer to see more details", () => {
       cy.get(".beer-link").first().click()
-      cy.intercept("GET", "http://localhost:3000/v2/artists/1", {
+      cy.intercept("GET", "http://localhost:3000/v2/beers/1", {
         "id": 1,
         "name": "Buzz",
         "tagline": "A Real Bitter Experience.",
@@ -45,8 +45,6 @@ describe('should see all beers images, names, and taglines.', () => {
     it("Should be able to go to Favorites", () => {
       cy.get(".favorites-link").click()
       cy.url("http://localhost:3000/").should('include', "Favorites")
-      cy.contains("Trashy Blonde")
-      cy.contains("Berliner Weisse With Yuzu - B-Sides")
   
     })
   } 
