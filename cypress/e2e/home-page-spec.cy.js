@@ -1,7 +1,7 @@
 
 describe('should see all beers images, names, and taglines.', () => {
     beforeEach(() => {
-      cy.intercept('GET', 'http://localhost:3001/api/v2/beers',{fixture: 'home-page.json'});
+      cy.intercept('GET', 'https://api.punkapi.com/v2/beers',{fixture: 'home-page.json'});
   
       cy.visit('http://localhost:3000/beers');
   

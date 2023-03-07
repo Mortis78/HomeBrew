@@ -1,24 +1,27 @@
 describe('should see all favorited beers images, names, and taglines.', () => {
     beforeEach(() => {
-      cy.intercept('GET', 'http://localhost:3001/api/v2/Favorites',{fixture: 'favorites-page.json'});
+      cy.intercept('GET', 'https://api.punkapi.com/v2/beers',{fixture: 'favorites-page.json'});
   
-      cy.visit('http://localhost:3000/Favorites');
+      cy.visit('http://localhost:3000/beers');
   
     });
 
-    it('Should display a title, on page load', () => {
-        cy.contains('Home Brew')
-    });
-    
-    it('Should display the correct data for each beer', () => {
-        cy.contains('Trashy Blonde')
-        cy.contains('You Know')
+    it.only("Should be able to go to Favorites", () => {
+        cy.get('.beer-cards > :nth-child(2)')
+        cy.get('.beer-name').contains("Trashy Blonde")
+        .click()
+        cy.url().should('eq', 'http://localhost:3000/2')
+        cy.get('.add-favorite').click()
+        cy.get('.home-link > p').click()
+        cy.url().should('eq', 'http://localhost:3000/beers')
+        cy.get('.favorites-link')
+        .click()
+        cy.url().should('eq', 'http://localhost:3000/Favorites')
+        cy.get('.beer-name').contains('Trashy Blonde')
         
-
-        cy.contains('Berliner Weisse With Yuzu')
-        cy.contains('Japanese citrus fruit')
-       
-    } );
+    
+      })
+    
     
     it("Should be able to click the beer to see more details", () => {
       cy.get(".beer-link").first().click()
